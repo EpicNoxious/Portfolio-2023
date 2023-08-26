@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-2023",
+  "version": "1.0.0",
+  "description": "portfolio of jappreet singh",
+  "main": "app.js",
+  "scripts": {
+    "develop": "sass static/scss/main.scss static/css/styles.css -w"
+  },
+  "author": "Jappreet S.",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.63.6"
+  }
+}

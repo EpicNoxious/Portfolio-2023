@@ -1,0 +1,129 @@
+nav {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid rgba(var(--primary), 0.3);
+  border-left: 1px solid rgba(var(--primary), 0.3);
+  border-right: 1px solid rgba(var(--primary), 0.3);
+  height: calc(100vh * 0.12);
+  @include tab {
+    height: calc(100vh * 0.1);
+  }
+  @include phone {
+    height: calc(100vh * 0.075);
+  }
+  .nav-section {
+    display: flex;
+    gap: 0;
+    border-left: 1px solid rgba(var(--primary), 0.3);
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+#nav-mobile-section {
+  //   border: 1px solid red;
+  display: flex;
+  flex-basis: calc(100% * (2 / 3));
+  z-index: 2;
+}
+
+#nav-toggle-button {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-left: 1px solid rgb(var(--primary));
+  // color: pink;
+  cursor: pointer;
+  display: none;
+  gap: 0.8rem;
+  height: 100%;
+  justify-content: center;
+  outline: none;
+  padding: 0rem 3rem;
+  position: relative;
+  z-index: 3;
+}
+
+#nav-toggle-button > span,
+#nav-toggle-button > i {
+  display: inline-block;
+  height: 1rem;
+  line-height: 1rem;
+}
+
+#nav-social-section,
+#nav-contact-section {
+  flex-grow: 1;
+  flex-basis: 25%;
+  font-size: 1.2vw;
+  @include tab {
+    font-size: 1.6vw;
+  }
+  @include smtab {
+    font-size: 2vw;
+  }
+  @include phone {
+    font-size: 3.6vw;
+    font-family: "SwissL", sans-serif;
+  }
+  font-family: "SwissExt", sans-serif;
+  text-transform: capitalize;
+  transition: background-color 300ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  span {
+    cursor: pointer;
+    color: rgb(var(--primary));
+  }
+}
+#nav-social-section {
+  @include phone {
+    display: none;
+  }
+}
+
+#nav-contact-section {
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(var(--primary), 0.1);
+  }
+}
+
+#nav-logo-section {
+  flex-basis: calc(100% / 3);
+  justify-content: flex-start;
+  align-items: center;
+  border-left: 0px;
+}
+
+#nav-logo-section > a > img {
+  width: 3.2vw;
+  margin: 2vw;
+
+  @include tab {
+    width: 4vw;
+    height: 100%;
+  }
+  @include smtab {
+    width: 6vw;
+  }
+  @include phone {
+    width: 8vw;
+  }
+}
+
+#nav-link-section {
+  flex-basis: 50%;
+  align-items: center;
+  &-content {
+    @include tab {
+      text-transform: uppercase;
+    }
+  }
+}
+
+#nav-social-section {
+  gap: 2vw;
+}

@@ -1,0 +1,200 @@
+:root {
+  --primary: 255, 255, 255;
+  --secondary: 255, 0, 0;
+  --background: 0, 0, 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: crosshair !important;
+}
+
+html,
+body {
+  background-color: rgb(var(--background));
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
+}
+
+body:before {
+  animation: grain 12s steps(10) infinite;
+  background-image: url(../img/noise.png);
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.75;
+  position: fixed;
+  top: -100%;
+  width: 300%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+main {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+#trail {
+  height: 80px;
+  width: 80px;
+  background-color: none;
+  border-radius: 80px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1000000;
+  pointer-events: none;
+  opacity: 1;
+  border: 1px solid rgba(var(--primary), 0.3);
+  @include smtab {
+    display: none !important;
+  }
+}
+
+// select color
+::selection {
+  color: black;
+  background: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  @include tab {
+    width: 5px;
+  }
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border: 1px solid rgba(var(--primary), 0.3);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--secondary));
+  border-radius: 1000px;
+}
+
+// fancy intro
+// fancy intro
+// fancy intro
+
+.wrapper {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(var(--background));
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  z-index: 100;
+  .wrapper-change {
+    position: relative;
+    width: 100vw;
+    p {
+      color: red;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+    }
+  }
+  // .text {
+  //   animation: changeFont 2s infinite;
+  //   text-align: center;
+  //   font-weight: 100 !important;
+  //   text-transform: capitalize;
+  //   color: rgb(var(--secondary));
+  //   vertical-align: middle;
+  //   line-height: 0.5;
+  // }
+}
+
+@keyframes changeFont {
+  0% {
+    font-family: "1";
+  }
+  10% {
+    font-family: "2";
+  }
+  20% {
+    font-family: "3";
+  }
+  30% {
+    font-family: "4";
+  }
+  40% {
+    font-family: "5";
+  }
+  50% {
+    font-family: "6";
+  }
+  60% {
+    font-family: "7";
+  }
+  70% {
+    font-family: "8";
+  }
+  80% {
+    font-family: "9";
+  }
+  90% {
+    font-family: "10";
+  }
+}
+
+@keyframes grain {
+  0%,
+  to {
+    transform: translate(0);
+  }
+
+  10% {
+    transform: translate(-5%, -10%);
+  }
+
+  20% {
+    transform: translate(-15%, 5%);
+  }
+
+  30% {
+    transform: translate(7%, -25%);
+  }
+
+  40% {
+    transform: translate(-5%, 25%);
+  }
+
+  50% {
+    transform: translate(-15%, 10%);
+  }
+
+  60% {
+    transform: translate(15%);
+  }
+
+  70% {
+    transform: translateY(15%);
+  }
+
+  80% {
+    transform: translate(3%, 35%);
+  }
+
+  90% {
+    transform: translate(-10%, 10%);
+  }
+}
